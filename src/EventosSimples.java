@@ -25,6 +25,9 @@ public class EventosSimples {
         JLabel etiqueta = new JLabel("Clics: 0");
         etiqueta.setBounds(30, 80, 100, 30);
 
+        JLabel cantidadLetras = new JLabel("words: 0");
+        cantidadLetras.setBounds(70, 100, 100, 30);
+
         JTextField campoTexto = new JTextField();
         campoTexto.setBounds(30, 130, 150, 30);
 
@@ -84,6 +87,13 @@ public class EventosSimples {
             }
         });
 
+        // Key event
+        campoTexto.addKeyListener(new KeyAdapter() {
+            public void keyReleased(KeyEvent e) {
+                cantidadLetras.setText("words: " + campoTexto.getText().length());
+            }
+        });
+
         // Evento que cambia el color de fondo de la ventana
         botonColor.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -105,5 +115,6 @@ public class EventosSimples {
         ventana.add(mensajeTecla);
         ventana.setVisible(true);
         ventana.add(botonColor);
+        ventana.add(cantidadLetras);
     }
 }
