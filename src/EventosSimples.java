@@ -1,19 +1,26 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.*;
 
 public class EventosSimples {
     public static void main(String[] args) {
         JFrame ventana = new JFrame("Eventos básicos");
-        ventana.setSize(300, 250);
+        ventana.setSize(350, 300);
         ventana.setLayout(null);
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        //Botones
         JButton boton = new JButton("Clic aquí");
         boton.setBounds(30, 30, 100, 30);
 
         JButton segundoBoton = new JButton("Segundo botón");
         segundoBoton.setBounds(150, 30, 120, 30);
 
+        JButton botonColor = new JButton("Cambiar color");
+        botonColor.setBounds(30, 200, 150, 30);
+
+        final Color[] colores = {Color.BLUE, Color.ORANGE, Color.MAGENTA};
+        final int[] indiceColor = {0};
 
         JLabel etiqueta = new JLabel("Clics: 0");
         etiqueta.setBounds(30, 80, 100, 30);
@@ -56,6 +63,19 @@ public class EventosSimples {
             }
         });
 
+        // Evento que cambia el color de fondo de la ventana
+        botonColor.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                //cambiar el color del fondo
+                ventana.getContentPane().setBackground(colores[indiceColor[0]]);
+
+                indiceColor[0] = (indiceColor[0] + 1) % colores.length;
+
+            }
+        });
+
+
+
         // Agregar componentes
         ventana.add(boton);
         ventana.add(segundoBoton);
@@ -63,5 +83,6 @@ public class EventosSimples {
         ventana.add(campoTexto);
         ventana.add(mensajeTecla);
         ventana.setVisible(true);
+        ventana.add(botonColor);
     }
 }
