@@ -46,6 +46,7 @@ public class EventosSimples {
         boton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 JOptionPane.showMessageDialog(null, "¡Botón presionado!");
+
             }
         });
         segundoBoton.addActionListener(new ActionListener() {
@@ -54,12 +55,15 @@ public class EventosSimples {
             }
         });
 
-        // Evento de mouse (MouseEvent)
+        // Evento de mouse (MouseEvent) //a
         final int[] contador = {0};
         etiqueta.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent e) {
                 contador[0]++;
-                etiqueta.setText("Clics: " + contador[0]);
+                if (contador[0] == 5) {
+                    etiqueta.setText("¡Llegaste a 5 clics!");
+                }else {
+                etiqueta.setText("Clics: " + contador[0]); }
             }
         });
 
