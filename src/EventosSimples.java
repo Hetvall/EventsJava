@@ -42,10 +42,16 @@ public class EventosSimples {
         etiqueta.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent e) {
                 contador[0]++;
+                etiqueta.setText("Clics: " + contador[0]);
                 if (contador[0] == 5) {
                     campoTexto.setText("¡Llegaste a 5 clics!");
                 }else {
-                etiqueta.setText("Clics: " + contador[0]); }
+                    if (contador[0] < 5 ) {
+                        campoTexto.setText(" Te faltan " + (5-contador[0]) + " para llegar a 5");
+                    } else {
+                        campoTexto.setText( " Te pasaste por " + ( contador[0] - 5) + " para llegar a 5");
+                    }
+                 }
             }
         });
 
