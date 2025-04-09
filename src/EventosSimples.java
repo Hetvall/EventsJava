@@ -24,6 +24,17 @@ public class EventosSimples {
         JLabel mensajeTecla = new JLabel("Escribe algo");
         mensajeTecla.setBounds(30, 170, 200, 30);
 
+        // Focus Event
+        campoTexto.addFocusListener(new FocusListener() {
+            public void focusGained(FocusEvent e){
+                JOptionPane.showMessageDialog(null, "Campo activo");
+            }
+
+            public void focusLost(FocusEvent e) {
+                JOptionPane.showMessageDialog(null, "Campo inactivo");
+            }
+        });
+
         // Evento del botón (ActionEvent)
         boton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
