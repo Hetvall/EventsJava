@@ -11,6 +11,10 @@ public class EventosSimples {
         JButton boton = new JButton("Clic aquí");
         boton.setBounds(30, 30, 100, 30);
 
+        JButton segundoBoton = new JButton("Otro botón");
+        segundoBoton.setBounds(30, 30, 100, 30);
+
+
         JLabel etiqueta = new JLabel("Clics: 0");
         etiqueta.setBounds(30, 80, 100, 30);
 
@@ -24,6 +28,11 @@ public class EventosSimples {
         boton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 JOptionPane.showMessageDialog(null, "¡Botón presionado!");
+            }
+        });
+        segundoBoton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(null, "¡Segundo botón presionado!");
             }
         });
 
@@ -49,10 +58,10 @@ public class EventosSimples {
 
         // Agregar componentes
         ventana.add(boton);
+        ventana.add(segundoBoton);
         ventana.add(etiqueta);
         ventana.add(campoTexto);
         ventana.add(mensajeTecla);
-
         ventana.setVisible(true);
     }
 }
