@@ -27,7 +27,7 @@ public class EventosSimples {
             }
         });
 
-        // Evento de mouse (MouseEvent)
+        // Evento de mouse (MouseEvent) //a
         final int[] contador = {0};
         etiqueta.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent e) {
