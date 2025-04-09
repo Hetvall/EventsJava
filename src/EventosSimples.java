@@ -27,11 +27,11 @@ public class EventosSimples {
         // Focus Event
         campoTexto.addFocusListener(new FocusListener() {
             public void focusGained(FocusEvent e){
-                JOptionPane.showMessageDialog(null, "Campo activo");
+                mensajeTecla.setText("Campo activo");
             }
 
             public void focusLost(FocusEvent e) {
-                JOptionPane.showMessageDialog(null, "Campo inactivo");
+                mensajeTecla.setText("Campo inactivo");
             }
         });
 
