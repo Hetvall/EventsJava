@@ -48,7 +48,6 @@ public class EventosSimples {
                 etiqueta.setText("Clics: " + contador[0]); }
             }
         });
-        mostrarVentana()
 
         // Evento de teclado (KeyEvent)
         campoTexto.addKeyListener(new KeyAdapter() {
