@@ -11,8 +11,8 @@ public class EventosSimples {
         JButton boton = new JButton("Clic aquí");
         boton.setBounds(30, 30, 100, 30);
 
-        JButton segundoBoton = new JButton("Otro botón");
-        segundoBoton.setBounds(30, 30, 100, 30);
+        JButton segundoBoton = new JButton("Segundo botón");
+        segundoBoton.setBounds(150, 30, 120, 30);
 
 
         JLabel etiqueta = new JLabel("Clics: 0");
