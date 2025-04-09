@@ -61,7 +61,7 @@ public class EventosSimples {
             public void mouseClicked(MouseEvent e) {
                 contador[0]++;
                 if (contador[0] == 5) {
-                    etiqueta.setText("¡Llegaste a 5 clics!");
+                    campoTexto.setText("¡Llegaste a 5 clics!");
                 }else {
                 etiqueta.setText("Clics: " + contador[0]); }
             }
